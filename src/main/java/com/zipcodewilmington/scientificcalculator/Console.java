@@ -47,7 +47,7 @@ public class Console {
         } else if (operate.equals("*")) {
             value3 = value1 * value2;
         } else if (operate.equals("/")) {
-            value3 = value2 / value1;
+            value3 = value1 / value2;
         } else {
             System.out.println("That's not an operator!");
         }
