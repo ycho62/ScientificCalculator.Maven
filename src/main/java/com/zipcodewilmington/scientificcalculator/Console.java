@@ -34,16 +34,12 @@ public class Console {
         double dub1 = doubleScanner.nextDouble();
         return dub1;
     }
-    public static Scanner getOperatorInput(String oper, double num1, double num2) {
+    public static Double getOperatorInput(String oper, double num1, double num2) {
         char operator;
-//        double num1, num2;
-//        Scanner input = new Scanner(System.in);
         System.out.println("Welcome to our Amazing Calculator!");
-//        num1 = input.nextDouble();
-        operator = input.next().charAt(0);
-//        num2 = input.nextDouble();
+        operator = oper.charAt(0);
+        double output = 0;
 
-//        input.close();
 
         switch(operator) {
             case '+':
@@ -61,10 +57,11 @@ public class Console {
                 } else {
                     System.out.println("Can not divide by 0!");
                 }
+                break;
             default:
                 System.out.println("%c is not an operator!");
-                return input;
+                return output;
         }
-        return input;
+        return output;
     }
 }
