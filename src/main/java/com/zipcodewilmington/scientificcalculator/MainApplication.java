@@ -34,11 +34,13 @@ public class MainApplication {
                 value1 = Console.getDoubleInput("Enter value 1") ;
             } else if (operate[op].equals("exit")) {
                 break;
+
             } else if (operate[op].equals("+") || operate[op].equals("-") || operate[op].equals("*") || operate[op].equals("/")){
                 value2 = Console.getDoubleInput("Enter value 2.");    //Input value2
                 value3 = Console.basicmath(operate[op], value1, value2);
                 value1 = value3;                                                    //set value 1 is 3
                 System.out.println("Current Value is " + value1);
+
             } else if (operate[op].equals("trig")) {
                 value3 = Console.trigFunctions(value1);
                 System.out.println("Current Value is " + value3);

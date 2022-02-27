@@ -96,12 +96,6 @@ public class Console {
         String radiansOrDegrees = in.nextLine();
         String radians = in.nextLine();
 
-
-/*        System.out.println("You've chose Radians");
-        System.out.println("Pick a trig");
-        String operate1 = in.nextLine();*/
-
-
         if (radiansOrDegrees.equals("degrees")) {
             System.out.println("You've chose degrees");
             System.out.println("Pick a trig");
@@ -112,7 +106,7 @@ public class Console {
                     output = (Math.sin(Math.toRadians(value1)));
                     break;
                 case "cos":
-                    output = (Math.cos(Math.toRadians(value1)));
+                    output = Math.round((Math.cos(Math.toRadians(value1))));
                     break;
                 case "tan":
                     output = (Math.tan(Math.toRadians(value1)));
