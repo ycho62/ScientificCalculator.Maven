@@ -1,0 +1,186 @@
+package com.zipcodewilmington.scientificcalculator;
+
+/**
+ * Created by leon on 2/9/18.
+ */
+public class MainApplication {
+
+    public static void main(String[] args) {
+        Console.println("Welcome to my calculator!");
+        //String s = Console.getStringInput("Enter a string");
+
+        String[] operate = new String[100];
+        int op = 0;
+
+        double initial = 0;
+        System.out.println("Current Value"+"\n" + initial);                     //For show, does nothing com
+        //System.out.println("Enter exit to close calculator");
+        Double value1 = Console.getDoubleInput("Enter a value1");       //Input value1
+
+        for (int i = 0; /*!operate[i].equals("exit") ||*/ i<=100; i++) {
+            operate[i] = Console.getStringInput("Enter an operator. Enter 'clear' to clear");
+            if (operate[i].equals("clear")){
+                value1 = 0.0;
+                Double value2 = 0.0;
+                Double value3 = 0.0;
+                System.out.println("Current Value"+"\n" + value1);
+                value1 = Console.getDoubleInput("Enter a value1");
+            } else {
+                Double value2 = Console.getDoubleInput("Enter a value2.");    //Input value2
+                Double value3 = Console.basicmath(operate[i], value1, value2);
+                value1 = value3;                                                    //set value 1 is 3
+                System.out.println("Current Value is " + value1);
+                op++;                                                               //Keep track outside loop
+            }
+        }
+
+        //Console.println("The user input %s as a string", s);        //not needed, just warmup
+        //Console.println("The user input %s as a integer", val1);       //not needed, just warmup
+        //Console.println("The user input %s as a d", val2);             //not needed, just warmup
+        //Console.println("The output is %f", value3);
+        //public static Double basicmath(args) this didn't work
+        System.out.println("pff");
+
+
+
+    }
+
+
+}
+
+    //Yun's code
+    public static double trigFunctions(String operate1, double value1) {
+
+        double output = 0;
+        Scanner in = new Scanner(System.in);
+        //if (operate1.equals("sin") || operate1.equals("cos") || operate1.equals("tan") || operate1.equals("inverse sin") || operate1.equals("inverse cos") || operate1.equals("inverse tan"))
+            //;
+        System.out.println("Radians or degrees?");
+        String radiansOrDegrees = in.nextLine();
+
+        if (radiansOrDegrees.equals("degrees")) {
+            System.out.println("You've chose degrees");
+            switch (operate1) {
+                case "sin":
+                    output = (Math.sin(Math.toRadians(value1)));
+                    break;
+                case "cos":
+                    output = (Math.cos(Math.toRadians(value1)));
+                    break;
+                case "tan":
+                    output = (Math.tan(Math.toRadians(value1)));
+                    break;
+                case "inverse sin":
+                    output = (1 / (Math.sin(Math.toRadians(value1))));
+                    break;
+                case "inverse cos":
+                    output = (1 / (Math.cos(Math.toRadians(value1))));
+                    break;
+                case "inverse tan":
+                    output = (1 / (Math.tan(Math.toRadians(value1))));
+                    break;
+                default:
+                    break;
+            }
+
+        } else {
+            String radians = in.nextLine();
+            switch (operate1) {
+                case "sin":
+                    output = (Math.sin(in.nextInt()));
+                    break;
+                case "cos":
+                    output = (Math.cos(in.nextInt()));
+                    break;
+                case "tan":
+                    output = (Math.tan(in.nextInt()));
+                    break;
+                case "inverse sin":
+                    output = (1 / (Math.sin(in.nextInt())));
+                    break;
+                case "inverse cos":
+                    output = (1 / (Math.cos(in.nextInt())));
+                    break;
+                case "inverse tan":
+                    output = (1 / (Math.tan(in.nextInt())));
+                    break;
+                default:
+                    break;
+            }
+            in.close();
+        }
+        return output;
+    }
+
+
+    mybackup
+
+       public static double trigFunctions(double value1) {
+
+            double output = 0;
+            Scanner in = new Scanner(System.in);
+            //if (operate1.equals("sin") || operate1.equals("cos") || operate1.equals("tan") || operate1.equals("inverse sin") || operate1.equals("inverse cos") || operate1.equals("inverse tan"))
+                //;
+            System.out.println("Radians or degrees?");
+            String radiansOrDegrees = in.nextLine();
+
+
+            if (radiansOrDegrees.equals("degrees")) {
+                System.out.println("You've chose degrees");
+                System.out.println("Pick a trig");
+                String operate1 = in.nextLine();
+
+                if (operate1.equals("sin")) {
+                        output = (Math.sin(Math.toRadians(value1)));
+
+                } else if (operate1.equals("cos")) {
+                        output = (Math.cos(Math.toRadians(value1)));
+
+                } else if (operate1.equals("tan")) {
+                        output = (Math.tan(Math.toRadians(value1)));
+
+                } else if (operate1.equals("inverse sin")) {
+                        output = (1 / (Math.sin(Math.toRadians(value1))));
+
+                } else if (operate1.equals("inverse cos")) {
+                        output = (1 / (Math.cos(Math.toRadians(value1))));
+
+                } else  {
+                    System.out.println("thiscodedidn'twork");
+                        output = (1 / (Math.tan(Math.toRadians(value1))));
+
+                }
+
+            } else {
+                String radians = in.nextLine();
+                System.out.println("You've chose Radians");
+                System.out.println("Pick a trig");
+                String operate1 = in.nextLine();
+
+                switch (operate1) {
+                    case "sin":
+                        output = (Math.sin(in.nextInt()));
+                        break;
+                    case "cos":
+                        output = (Math.cos(in.nextInt()));
+                        break;
+                    case "tan":
+                        output = (Math.tan(in.nextInt()));
+                        break;
+                    case "inverse sin":
+                        output = (1 / (Math.sin(in.nextInt())));
+                        break;
+                    case "inverse cos":
+                        output = (1 / (Math.cos(in.nextInt())));
+                        break;
+                    case "inverse tan":
+                        output = (1 / (Math.tan(in.nextInt())));
+                        break;
+                    default:
+                        break;
+                }
+                in.close();
+            }
+            return output;
+        }
+    }

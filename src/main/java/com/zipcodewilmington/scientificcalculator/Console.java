@@ -11,6 +11,7 @@ public class Console {
 
     public static void println(String output, Object... args) {
         print(output + "\n", args);
+
     }
 
     public static String getStringInput(String prompt) {
@@ -40,6 +41,7 @@ public class Console {
     public static Double basicmath(String operate, double value1, double value2) {
         double value3 = 0;
 
+        String error;
         if (operate.equals("+")) {
             value3 = value1 + value2;
         } else if (operate.equals("-")) {
@@ -47,7 +49,11 @@ public class Console {
         } else if (operate.equals("*")) {
             value3 = value1 * value2;
         } else if (operate.equals("/")) {
-            value3 = value1 / value2;
+            if (value2 == 0) {
+                System.out.println("Arrrr");
+            } else {
+                value3 = value1 / value2;
+            }
         } else {
             System.out.println("That's not an operator!");
         }
@@ -76,5 +82,82 @@ public class Console {
         String userInput = scanner.nextLine();
         return userInput;
     }
-}
 
+
+    //Yun's code
+    public static double trigFunctions(double value1) {
+
+        double output = 0;
+        Scanner in = new Scanner(System.in);
+
+        //if (operate1.equals("sin") || operate1.equals("cos") || operate1.equals("tan") || operate1.equals("inverse sin") || operate1.equals("inverse cos") || operate1.equals("inverse tan"))
+        //;
+        System.out.println("Radians or degrees?");
+        String radiansOrDegrees = in.nextLine();
+        String radians = in.nextLine();
+
+
+/*        System.out.println("You've chose Radians");
+        System.out.println("Pick a trig");
+        String operate1 = in.nextLine();*/
+
+
+        if (radiansOrDegrees.equals("degrees")) {
+            System.out.println("You've chose degrees");
+            System.out.println("Pick a trig");
+            String operate1 = in.nextLine();
+
+            switch (operate1) {
+                case "sin":
+                    output = (Math.sin(Math.toRadians(value1)));
+                    break;
+                case "cos":
+                    output = (Math.cos(Math.toRadians(value1)));
+                    break;
+                case "tan":
+                    output = (Math.tan(Math.toRadians(value1)));
+                    break;
+                case "inverse sin":
+                    output = (1 / (Math.sin(Math.toRadians(value1))));
+                    break;
+                case "inverse cos":
+                    output = (1 / (Math.cos(Math.toRadians(value1))));
+                    break;
+                case "inverse tan":
+                    output = (1 / (Math.tan(Math.toRadians(value1))));
+                    break;
+                default:
+                    break;
+            }
+
+        } else {
+            System.out.println("Pick a trig");
+            String operate1 = in.nextLine();
+
+            switch (operate1) {
+                case "sin":
+                    output = (Math.sin(value1));
+                    break;
+                case "cos":
+                    output = (Math.cos(value1));
+                    break;
+                case "tan":
+                    output = (Math.tan(value1));
+                    break;
+                case "inverse sin":
+                    output = (1 / (Math.sin(value1)));
+                    break;
+                case "inverse cos":
+                    output = (1 / (Math.cos(value1)));
+                    break;
+                case "inverse tan":
+                    output = (1 / (Math.tan(value1)));
+                    break;
+                default:
+                    break;
+            }
+            in.close();
+        }
+        return output;
+    }
+}

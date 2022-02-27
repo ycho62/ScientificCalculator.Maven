@@ -9,9 +9,9 @@ public class MainApplication {
         Console.println("Welcome to my calculator!");
         //String s = Console.getStringInput("Enter a string");
 
-        String[] operate        = new String[100];
-        String[] operatetrig    = new String[100];
-        double[] memory         = new double[100];
+        String[] operate = new String[100];
+
+        double[] memory = new double[100];
 
 
         int op = 0;
@@ -25,28 +25,22 @@ public class MainApplication {
         value1 = Console.getDoubleInput("Enter value 1");       //Input value1
 
         for (int i = 0; i<=100; i++) {
-            operate[op] = Console.getStringInput("Choose an operation. Enter 'clear' to clear");
-            if (operate[op].equals("clear")){
+            operate[op] = Console.getStringInput("Choose a function. Enter 'clear' to clear");
+            if (operate[op].equals("clear") || value3 == 0){
                 value1 = 0.0;
                 value2 = 0.0;
                 value3 = 0.0;
                 System.out.println("Current Value"+"\n" + value1);
                 value1 = Console.getDoubleInput("Enter value 1") ;
-            } else if (operate[op].equals("exit")) {
+            } else if(operate[op].equals("exit")) {
                 break;
-            } else if (operate[op].equals("+") || operate[op].equals("-") || operate[op].equals("*") || operate[op].equals("/")){
+            } else {
                 value2 = Console.getDoubleInput("Enter value 2.");    //Input value2
-                value3 = Console.basicmath(operate[op], value1, value2);
+                value3 = Console.basicmath(operate[i], value1, value2);
                 value1 = value3;                                                    //set value 1 is 3
                 System.out.println("Current Value is " + value1);
-            } else if (operate[op].equals("trig")) {
-                value3 = Console.trigFunctions(value1);
-                System.out.println("Current Value is " + value3);
-            } else {
-                System.out.println("Error");
-                value1 = Console.getDoubleInput("Enter a value 1");
-            }
 
+            }
             op++;                                                                    //Keep track outside loop
         }
 
