@@ -83,38 +83,38 @@ public class Console {
 
 
     //Yun's code
-    public static double exponents (double value1){
+    public static double exponents(double value1) {
         System.out.println("options: square, square root, exponentiation, inverse, invert");
         Scanner in = new Scanner(System.in);
         String operate1 = in.nextLine();
-       double value3 = 0;
-    switch (operate1) {
-        case "square":
-            value3 = value1 * value1;
-            System.out.println("Square of " + value1 +" = " + value3);
-            break;
-        case "square root":
-            value3 = Math.sqrt(value1);
-            System.out.println("Square root of " + value1 +" = " + value3);
-            break;
-        case "exponentiation":
-            System.out.println("Enter value 2");
-            double value2 = in.nextDouble();
-            value3 = Math.pow(value1, value2);
-            System.out.println("Exponentiation of " + value1 + " to " + value2 + " = " + value3);
-            break;
-        case "inverse":
-            value3 = 1 / value1;
-            System.out.println(value3);
-            break;
-        case "invert":
-            value3 = value1 * -1;
-            System.out.println(value3);
-            break;
-        default:
-            break;
+        double value3 = 0;
+        switch (operate1) {
+            case "square":
+                value3 = value1 * value1;
+                System.out.println("Square of " + value1 + " = " + value3);
+                break;
+            case "square root":
+                value3 = Math.sqrt(value1);
+                System.out.println("Square root of " + value1 + " = " + value3);
+                break;
+            case "exponentiation":
+                System.out.println("Enter value 2");
+                double value2 = in.nextDouble();
+                value3 = Math.pow(value1, value2);
+                System.out.println("Exponentiation of " + value1 + " to " + value2 + " = " + value3);
+                break;
+            case "inverse":
+                value3 = 1 / value1;
+                System.out.println(value3);
+                break;
+            case "invert":
+                value3 = value1 * -1;
+                System.out.println(value3);
+                break;
+            default:
+                break;
 
-    }
+        }
         return value3;
     }
 
@@ -136,32 +136,32 @@ public class Console {
             switch (operate1) {
                 case "sin":
                     output = Math.sin(Math.toRadians(value1));
-                    System.out.println("degrees sin(" + value1 +") = " + output);
+                    System.out.println("degrees sin(" + value1 + ") = " + output);
                     break;
                 case "cos":
                     if (value1 == 90) {
                         output = Math.round(Math.cos(Math.toRadians(value1)));
-                        System.out.println("degrees cos(" + value1 +") = " + output);
+                        System.out.println("degrees cos(" + value1 + ") = " + output);
                     } else {
                         output = Math.cos(Math.toRadians(value1));
-                        System.out.println("degrees cos(" + value1 +") = " + output);
+                        System.out.println("degrees cos(" + value1 + ") = " + output);
                     }
                     break;
                 case "tan":
                     output = Math.tan(Math.toRadians(value1));
-                    System.out.println("degrees tan(" + value1 +") = " + output);
+                    System.out.println("degrees tan(" + value1 + ") = " + output);
                     break;
                 case "asin":
                     output = Math.asin(Math.toRadians(value1));
-                    System.out.println("degrees asin(" + value1 +") = " + output);
+                    System.out.println("degrees asin(" + value1 + ") = " + output);
                     break;
-                case "acos" :
+                case "acos":
                     output = Math.acos(Math.toRadians(value1));
-                    System.out.println("degrees acos(" + value1 +") = " + output);
+                    System.out.println("degrees acos(" + value1 + ") = " + output);
                     break;
                 case "atan":
                     output = Math.atan(Math.toRadians(value1));
-                    System.out.println("degrees atan(" + value1 +") = " + output);
+                    System.out.println("degrees atan(" + value1 + ") = " + output);
                     break;
                 default:
                     break;
@@ -172,27 +172,27 @@ public class Console {
             switch (operate1) {
                 case "sin":
                     output = Math.sin(value1);
-                    System.out.println("radian sin(" + value1 +") = " + output);
+                    System.out.println("radian sin(" + value1 + ") = " + output);
                     break;
                 case "cos":
                     output = Math.cos(value1);
-                    System.out.println("radian cos(" + value1 +") = " + output);
+                    System.out.println("radian cos(" + value1 + ") = " + output);
                     break;
                 case "tan":
                     output = Math.tan(value1);
-                    System.out.println("radian tan(" + value1 +") = " + output);
+                    System.out.println("radian tan(" + value1 + ") = " + output);
                     break;
                 case "asin":
                     output = Math.asin(value1);
-                    System.out.println("radian asin(" + value1 +") = " + output);
+                    System.out.println("radian asin(" + value1 + ") = " + output);
                     break;
                 case "acos":
                     output = Math.acos(value1);
-                    System.out.println("radian acos(" + value1 +") = " + output);
+                    System.out.println("radian acos(" + value1 + ") = " + output);
                     break;
                 case "atan":
                     output = Math.atan(value1);
-                    System.out.println("radian atan(" + value1 +") = " + output);
+                    System.out.println("radian atan(" + value1 + ") = " + output);
                     break;
                 default:
                     break;
@@ -200,18 +200,29 @@ public class Console {
         }
         return output;
     }
-    public static double logs (double value1){
-        System.out.println("options: log, 1/log, ln, 1/ln");
+
+    public static double log(double value1) {
+        System.out.println("options: log, 10^x, ln, e^x");
         Scanner in = new Scanner(System.in);
         String operate1 = in.nextLine();
         double value3 = 0;
         switch (operate1) {
             case "log":
+                value3 = Math.log10(value1);
+                System.out.println("log of " + value1 + " = " + value3);
+                break;
+            case "10^x":
+                value3 = (Math.pow(10, value1));
+                System.out.println("10 to the " + value1 + " = " + value3);
+                break;
+            case "ln":
                 value3 = Math.log(value1);
-                System.out.println("log of " + value1 +" = " + value3);
+                System.out.println("Natural log " + value1 + " = " + value3);
                 break;
-            case "1/log":
-                value3 = Math.(value1);
-                System.out.println("log of " + value1 +" = " + value3);
+            case "e^x":
+                value3 = Math.exp(value1);
+                System.out.println("E raised to the value of " + value1 + " = " + value3);
                 break;
+        }return value3;
+    }
 }

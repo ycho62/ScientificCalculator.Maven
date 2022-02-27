@@ -49,6 +49,10 @@ public class MainApplication {
                 value3 = Console.exponents(value1);
                 System.out.println("Display Value is " + value3);
                 value1 = value3;
+            } else if(operate[op].equals("log")) {
+                value3 = Console.log(value1);
+                System.out.println("Display Value is " + value3);
+                value1 = value3;
             } else {
                 System.out.println("Error");
                 value1 = Console.getDoubleInput("Enter a value");
