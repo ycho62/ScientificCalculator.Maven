@@ -14,6 +14,26 @@ public class Console {
 
     }
 
+    public static double checkDouble(String value){
+        Scanner in = new Scanner(System.in);
+        //String val = in.nextLine();
+        double x = 0;
+        Boolean pass = false;
+
+
+        while (!pass){
+        System.out.print("Enter a number: ");
+            if (!in.hasNextDouble()) {
+            String word = in.next();
+            System.err.println(word + " is not a number");
+            } else {
+            x = in.nextDouble();
+            pass = true;
+            }
+        }
+        return x;
+    }
+
     public static String getStringInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         println(prompt);
@@ -172,8 +192,6 @@ public class Console {
 
         while(!pick.equals("exit")) {
 
-
-            //testing theory
             switch (pick) {
                 case "binary":
                     System.out.println("Binary value for " + value1 + " is " + binary1);
@@ -186,15 +204,95 @@ public class Console {
                     break;
                 default:
                     System.out.println("invalid entry");
-
             }
+
             System.out.println("Select a number system \n" +
                     "binary \n" +
-                    "octa \n" +
+                    "octal \n" +
                     "hex \n");
             pick = in.nextLine();
         }
 
+
+
     }
+
+    public static double store(double value1){
+        double store;
+
+        store = value1;
+
+        return store;
+    }
+
+    public static double exponents(double value1) {
+        System.out.println("options: square, square root, exponentiation, inverse, invert");
+        Scanner in = new Scanner(System.in);
+        String operate1 = in.nextLine();
+        double value3 = 0;
+        switch (operate1) {
+            case "square":
+                value3 = value1 * value1;
+                System.out.println("Square of " + value1 + " = " + value3);
+                break;
+            case "square root":
+                value3 = Math.sqrt(value1);
+                System.out.println("Square root of " + value1 + " = " + value3);
+                break;
+            case "exponentiation":
+                System.out.println("Enter value 2");
+                double value2 = in.nextDouble();
+                value3 = Math.pow(value1, value2);
+                System.out.println("Exponentiation of " + value1 + " to " + value2 + " = " + value3);
+                break;
+            default:
+                break;
+
+        }
+        return value3;
+    }
+
+    public static double invert (double value1){
+        double output = 0;
+        output = value1 * -1;
+        System.out.println("Inverted value of " + value1 + " = " + output);
+        return output;
+    }
+
+    public static double inverse (double value1){
+        double output = 0;
+        output = 1 / value1;
+        System.out.println("Inverse value of " + value1 + " = " + output);
+
+        return output;
+    }
+
+    public static double log(double value1) {
+        System.out.println("options: log, 10^x, ln, e^x");
+        Scanner in = new Scanner(System.in);
+        String operate1 = in.nextLine();
+        double value3 = 0;
+        switch (operate1) {
+            case "log":
+                value3 = Math.log10(value1);
+                System.out.println("log (" + value1 + ") = " + value3);
+                break;
+            case "10^x":
+                value3 = (Math.pow(10, value1));
+                System.out.println("10 to the " + value1 + " = " + value3);
+                break;
+            case "ln":
+                value3 = Math.log(value1);
+                System.out.println("e^(ln" + value1 + ") = " + value3);
+                break;
+            case "e^x":
+                value3 = Math.exp(value1);
+                System.out.println("e^ " + value1 + " = " + value3);
+                break;
+        }
+        return value3;
+    }
+
+
 }
 
