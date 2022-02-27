@@ -293,6 +293,16 @@ public class Console {
         return value3;
     }
 
+    public static double factorial (double value){
+
+        double output = 1;
+
+        for (int i = 1; i <= value; i++) {
+            output *= i;
+        }
+
+        return output;
+    }
 
 }
 

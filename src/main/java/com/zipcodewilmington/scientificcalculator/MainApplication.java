@@ -104,6 +104,10 @@ public class MainApplication {
                 value3 = Console.log(value1);
                 System.out.println("Display Value is " + value3);
                 value1 = value3;
+            } else if (operate[op].equals("factorial")){
+                value3 = Console.factorial(value1);
+                System.out.println("Display Value is " + value3);
+                value1 = value3;
             } else {
                 System.out.println("Error");  //Modify this section more for value3 != 0
                 value1 = Console.checkDouble("Enter value");
