@@ -92,65 +92,78 @@ public class Console {
 
         //if (operate1.equals("sin") || operate1.equals("cos") || operate1.equals("tan") || operate1.equals("inverse sin") || operate1.equals("inverse cos") || operate1.equals("inverse tan"))
         //;
-        System.out.println("Radians or degrees?");
+        System.out.println("radians or degrees?");
         String radiansOrDegrees = in.nextLine();
-        String radians = in.nextLine();
 
-        if (radiansOrDegrees.equals("degrees")) {
-            System.out.println("You've chose degrees");
-            System.out.println("Pick a trig");
-            String operate1 = in.nextLine();
+        System.out.println("Pick a trig - sin cos tan asin acos atan");
+        String operate1 = in.nextLine();
+
+        if (radiansOrDegrees.equals("degrees") || radiansOrDegrees.equals("Degrees")) {
 
             switch (operate1) {
                 case "sin":
-                    output = (Math.sin(Math.toRadians(value1)));
+                    output = Math.sin(Math.toRadians(value1));
+                    System.out.println("degrees sin(" + value1 +") = " + output);
                     break;
                 case "cos":
-                    output = Math.round((Math.cos(Math.toRadians(value1))));
+                    if (value1 == 90) {
+                        output = Math.round(Math.cos(Math.toRadians(value1)));
+                        System.out.println("degrees cos(" + value1 +") = " + output);
+                    } else {
+                        output = Math.cos(Math.toRadians(value1));
+                        System.out.println("degrees cos(" + value1 +") = " + output);
+                    }
                     break;
                 case "tan":
-                    output = (Math.tan(Math.toRadians(value1)));
+                    output = Math.tan(Math.toRadians(value1));
+                    System.out.println("degrees tan(" + value1 +") = " + output);
                     break;
-                case "inverse sin":
-                    output = (1 / (Math.sin(Math.toRadians(value1))));
+                case "asin":
+                    output = Math.asin(Math.toRadians(value1));
+                    System.out.println("degrees asin(" + value1 +") = " + output);
                     break;
-                case "inverse cos":
-                    output = (1 / (Math.cos(Math.toRadians(value1))));
+                case "acos" :
+                    output = Math.acos(Math.toRadians(value1));
+                    System.out.println("degrees acos(" + value1 +") = " + output);
                     break;
-                case "inverse tan":
-                    output = (1 / (Math.tan(Math.toRadians(value1))));
+                case "atan":
+                    output = Math.atan(Math.toRadians(value1));
+                    System.out.println("degrees atan(" + value1 +") = " + output);
                     break;
                 default:
                     break;
             }
 
         } else {
-            System.out.println("Pick a trig");
-            String operate1 = in.nextLine();
 
             switch (operate1) {
                 case "sin":
-                    output = (Math.sin(value1));
+                    output = Math.sin(value1);
+                    System.out.println("radian sin(" + value1 +") = " + output);
                     break;
                 case "cos":
-                    output = (Math.cos(value1));
+                    output = Math.cos(value1);
+                    System.out.println("radian cos(" + value1 +") = " + output);
                     break;
                 case "tan":
-                    output = (Math.tan(value1));
+                    output = Math.tan(value1);
+                    System.out.println("radian tan(" + value1 +") = " + output);
                     break;
-                case "inverse sin":
-                    output = (1 / (Math.sin(value1)));
+                case "asin":
+                    output = Math.asin(value1);
+                    System.out.println("radian asin(" + value1 +") = " + output);
                     break;
-                case "inverse cos":
-                    output = (1 / (Math.cos(value1)));
+                case "acos":
+                    output = Math.acos(value1);
+                    System.out.println("radian acos(" + value1 +") = " + output);
                     break;
-                case "inverse tan":
-                    output = (1 / (Math.tan(value1)));
+                case "atan":
+                    output = Math.atan(value1);
+                    System.out.println("radian atan(" + value1 +") = " + output);
                     break;
                 default:
                     break;
             }
-            in.close();
         }
         return output;
     }

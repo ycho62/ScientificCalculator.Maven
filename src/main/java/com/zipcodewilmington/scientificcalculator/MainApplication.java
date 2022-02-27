@@ -22,7 +22,7 @@ public class MainApplication {
 
         System.out.println("Current Value"+"\n" + initial);                    //For show, does nothing com
         //System.out.println("Enter exit to close calculator");
-        value1 = Console.getDoubleInput("Enter value 1");       //Input value1
+        value1 = Console.getDoubleInput("Enter value");       //Input value1
 
         for (int i = 0; i<=100; i++) {
             operate[op] = Console.getStringInput("Choose an operation. Enter 'clear' to clear");
@@ -30,8 +30,8 @@ public class MainApplication {
                 value1 = 0.0;
                 value2 = 0.0;
                 value3 = 0.0;
-                System.out.println("Current Value"+"\n" + value1);
-                value1 = Console.getDoubleInput("Enter value 1") ;
+                System.out.println("Display Value"+"\n" + value1);
+                value1 = Console.getDoubleInput("Enter value") ;
             } else if (operate[op].equals("exit")) {
                 break;
 
@@ -39,14 +39,14 @@ public class MainApplication {
                 value2 = Console.getDoubleInput("Enter value 2.");    //Input value2
                 value3 = Console.basicmath(operate[op], value1, value2);
                 value1 = value3;                                                    //set value 1 is 3
-                System.out.println("Current Value is " + value1);
+                System.out.println("Display Value is " + value1);
 
             } else if (operate[op].equals("trig")) {
                 value3 = Console.trigFunctions(value1);
-                System.out.println("Current Value is " + value3);
+                System.out.println("Display Value is " + value3);
             } else {
                 System.out.println("Error");
-                value1 = Console.getDoubleInput("Enter a value 1");
+                value1 = Console.getDoubleInput("Enter a value");
             }
 
             op++;                                                                    //Keep track outside loop
