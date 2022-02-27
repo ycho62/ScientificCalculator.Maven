@@ -62,20 +62,6 @@ public class Console {
 
     }
 
-/*    public static String basicmath2(String test){
-
-        Double valtest1 = Console.getDoubleInput("Enter a value");
-        for (int i = 0, !operator.equals("exit"), i++) {
-            Double val1 = Console.getDoubleInput("Enter a value1");    //value1
-            //String operator = Console.getStringInput("Enter an operator"); //get operator
-            Double val2 = Console.getDoubleInput("Enter a value2.");       //value2
-            Double value3 = Console.basicmath(operator, val1, val2);
-            value1 = value3;
-        }
-
-        return String.format("%s", 1);
-    }*/
-
     public static String getStringArray(String prompt) {
         Scanner scanner = new Scanner(System.in);
         println(prompt);
@@ -167,4 +153,48 @@ public class Console {
         }
         return output;
     }
+
+    public static void numtype(int value1){
+
+        String binary1  = Integer.toBinaryString(value1);
+        String octa1    = Integer.toOctalString(value1);
+        String hexa1    = Integer.toHexString(value1);
+        String pick;
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Select a number system \n" +
+                "binary \n" +
+                "octal \n" +
+                "hex \n" +
+                "exit");
+
+        pick = in.nextLine();
+
+        while(!pick.equals("exit")) {
+
+
+            //testing theory
+            switch (pick) {
+                case "binary":
+                    System.out.println("Binary value for " + value1 + " is " + binary1);
+                    break;
+                case "octal":
+                    System.out.println("Octal value for " + value1 + " is " + octa1);
+                    break;
+                case "hex":
+                    System.out.println("Hexadecimal value for " + value1 + " is " + hexa1);
+                    break;
+                default:
+                    System.out.println("invalid entry");
+
+            }
+            System.out.println("Select a number system \n" +
+                    "binary \n" +
+                    "octa \n" +
+                    "hex \n");
+            pick = in.nextLine();
+        }
+
+    }
 }
+
