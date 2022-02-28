@@ -72,6 +72,9 @@ class ConsoleTest {
         Console trig = new Console();
 
         assertEquals(trig.trigFunctions(90), 1);
+
+
+
     }
 
     @Test
