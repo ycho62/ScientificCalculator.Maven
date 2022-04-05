@@ -27,7 +27,7 @@ public class MainApplication {
         //value1 = Console.getDoubleInput("Enter value");       //Input value1
 
         value1 = Console.checkDouble("Enter value"); //Add this function instead
-
+        int value7 = Console.checkDouble("Enter value")
         for (int i = 0; i<= loop; i++) {
 
             System.out.println("Current value = " + value1);
